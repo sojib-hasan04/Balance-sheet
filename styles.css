@@ -1,132 +1,152 @@
 
+span[class~="sr-only"] {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    width: 1px !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    padding: 0 !important;
+    margin: -1px !important;
+}
+
+html {
+    box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: sans-serif;
+    color: #0a0a23;
 }
 
+h1 {
+    max-width: 37.25rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+}
 
-.nav {
+h1 .flex {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1a1a2e;
-    padding: 0 16px;
+    flex-direction: column-reverse;
+    gap: 1rem;
 }
 
-.nav h1 {
-    color: white;
-    margin: 16px 0;
+h1 .flex span:first-of-type {
+    font-size: 0.7em;
 }
 
-ul {
+h1 .flex span:last-of-type {
+    font-size: 1.2em;
+}
+
+section {
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 2px solid #d0d0d5;
+}
+
+#years {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 0;
+    justify-content: flex-end;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    background: #0a0a23;
+    color: #fff;
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+    margin: 0 -2px;
 }
 
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-
-.hero-section {
-    background-color: #1a1a2e;
-    padding: 100px 20px;
-    text-align: center;
-    color: white;
-}
-.hero-section h1 {
-    font-size: 3rem;
-}
-
-button {
-    background-color: darkturquoise;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+#years span[class] {
     font-weight: bold;
+    width: 4.5rem;
+    text-align: right;
 }
 
-button:hover {
-    background-color: dodgerblue;
-}
-.card:hover {
-    transform: translateY(-5px);
-    transition: 0.3s;
+.table-wrap {
+    padding: 0 0.75rem 1.5rem 0.75rem;
 }
 
-
-.about-section {
-    background-color: orchid;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.about-section h1 {
-    color: #1a1a2e;
-}
-
-
-.project-section {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 40px 10px;
-    gap: 20px;
-}
-
-.card {
-    width: 200px;
-    padding: 30px;
-    text-align: center;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border-radius: 10px;
-}
-
-
-.contact-section {
-    background-color: #d9e2ec;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.contact-section h1 {
-    color: #1a1a2e;
-}
-
-.contact-section label {
-    color: darkslategray;
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-.contact-section input,
-.contact-section textarea {
+table {
+    border-collapse: collapse;
+    border: 0;
     width: 100%;
-    max-width: 350px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
+    position: relative;
+    margin-top: 3rem;
 }
 
-.contact-section textarea {
-    height: 100px;
+table caption {
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
 }
 
+tbody td {
+    width: 100vw;
+    min-width: 4rem;
+    max-width: 4rem;
+}
 
-.footer {
-    color: white;
-    text-align: center;
-    padding: 20px;
-    background-color: #1a1a2e;
+tbody th {
+    width: calc(100% - 12rem);
+}
+
+tr[class="total"] {
+    border-bottom: 4px double #0a0a23;
+    font-weight: bold;
+}
+
+tr[class="total"] th {
+    text-align: left;
+    padding: 0.5rem 0 0.25rem 0.5rem;
+}
+
+tr.total td {
+    text-align: right;
+    padding: 0 0.25rem;
+}
+
+tr.total td:nth-of-type(3) {
+    padding-right: 0.5rem;
+}
+
+tr.total:hover {
+    background-color: #99c9ff;
+}
+
+td.current {
+    font-style: italic;
+}
+
+tr.data {
+    background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
+
+tr.data th {
+    text-align: left;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+}
+
+tr.data th .description {
+    display: block;
+    font-weight: normal;
+    font-style: italic;
+    padding: 1rem 0 0.75rem;
+    margin-right: -13.5rem;
+}
+
+tr.data td {
+    vertical-align: top;
+    padding: 0.3rem 0.25rem 0;
+    text-align: right;
+}
+
+tr.data td:last-of-type {
+    padding-right: 0.5rem;
 }
